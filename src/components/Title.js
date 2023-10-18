@@ -1,36 +1,49 @@
+import { useEffect, useState } from 'react';
+
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let message = 'THE STOESZER';
+const finalMessage = 'THE STOESZER';
 
 function Title() {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  const finalMessage = 'THE STOESZER'
-  let message = 'THE STOESZER'
+  const [printName, setPrintName] = useState('');
+  const [iteration, setIteration] = useState(0);
 
-  let interval = null;
-  let iteration = 0;
-  
-  clearInterval(interval);
-  
-  interval = setInterval(() => {
-    message = message
-      .split("")
-      .map((letter, index) => {
-        if(index < iteration) {
-          return finalMessage[index];
+  function useScramble() {
+    useEffect(() => {
+      const interval = setInterval(() => {
+        message = message
+          .split('')
+          .map((letter, index) => {
+            if (index < iteration) {
+              return finalMessage[index];
+            }
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join('');
+        setPrintName(message);
+        if (iteration >= message.length) {
+          clearInterval(interval);
+        } else if (iteration < message.length) {
+          setIteration((c) => c + 1 / 3);
         }
-      
-        return letters[Math.floor(Math.random() * 26)]
-      })
-      .join("");
-    
-    if(iteration >= message.length){ 
-      clearInterval(interval);
-    }
-    
-    iteration += 1 / 3;
-  }, 30);
+      }, 30);
+
+      return () => clearInterval(interval);
+    }, [iteration]);
+  }
 
   return (
     <div>
-      {message}
+      <h1 onMouseEnter={useScramble()}>{printName}</h1>
+      <div>{/* Computer immage */}</div>
+      <div>
+        <p>Hi, I'm Phillip Splettstoeszer, an expert Full Stack Developer.</p>
+        {/* TO DO: Add linkedIn and github icons that link to my sites */}
+      </div>
+      <div>
+        <h3>My Skills:</h3>
+        {/* Add images of html, css, js, tsx, tailwind, react, nextjs, express, mango, postgres, etc. */}
+      </div>
     </div>
   );
 }
