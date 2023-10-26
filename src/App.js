@@ -6,11 +6,13 @@ import Title from './components/Title';
 
 function App() {
   return (
-    <div>
+    <div className='bg-slate-200'>
       <Navbar />
-      <Title />
-      <About />
-      <Projects />
+      <div className='p-10'>
+        <Title />
+        <About />
+        <Projects />
+      </div>
     </div>
   );
 }

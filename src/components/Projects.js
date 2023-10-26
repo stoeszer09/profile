@@ -19,8 +19,8 @@ const projects = [
 export default function Projects() {
 
   return (
-    <div>
-      <h2>Projects</h2>
+    <div >
+      <h2 className='font-bold text-2xl'>Projects</h2>
       {projects.map((project, index) => {
         return (
           <Project project={project} />
