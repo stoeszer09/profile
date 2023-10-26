@@ -10,6 +10,7 @@ import postgres from '../assets/postgres.webp'
 import react from '../assets/react.png'
 import tailwind from '../assets/tailwind.png'
 import typescript from '../assets/typescript.png'
+import linkedin from '../assets/LinkedIn.png'
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let message = 'THE STOESZER';
@@ -42,17 +43,20 @@ function Title() {
 
   return (
     <div className='m-6 p-6 bg-green-50 rounded-3xl shadow-lg '>
-      <h1 className='font-bold text-6xl'
+      <h1 className='font-bold text-6xl p-10'
       onMouseOver={() => setIteration(0)} onMouseOut={() => setIteration(0)}>
         {printName}
         </h1>
       <div>{/* Computer immage */}</div>
-      <div>
+      <div className='pl-10'>
         <p>Hi, I'm Phillip Splettstoeszer, an expert Full Stack Developer.</p>
-        {/* TO DO: Add linkedIn and github icons that link to my sites */}
+        <div className='flex'>
+          <img className='w-10 h-10 m-5' src={github} alt='github image'/>
+          <img className='w-10 h-10 m-5' src={linkedin} alt='linkedin image'/>
+        </div>
       </div>
-      <div className='flex'>
-        <h3>My Skills:</h3>
+      <div className='flex p-10'>
+        <h3 className='font-bold pr-5'>My Skills:</h3>
         <img className='w-10 h-10' src={html} alt='html image'/>
         <img className='w-10 h-10' src={css} alt='css image'/>
         <img className='ml-5 w-10 h-10' src={javascript} alt='javascript image'/>
@@ -63,7 +67,7 @@ function Title() {
         <img className='w-10 h-10' src={nextjs} alt='nextjs image'/>
         <img className='ml-5 w-10 h-10' src={postgres} alt='postgres image'/>
         <img className='w-10 h-10' src={mongodb} alt='mongodb image'/>
-        <img className='w-10 h-10' src={github} alt='github image'/>
+        
       </div>
     </div>
   );
