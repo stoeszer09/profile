@@ -9,7 +9,7 @@ const projects = [
     image: "",
   },
   {
-    title: "Home Accounting",
+    title: "You Betchya",
     url: "",
     description: "",
     image: "",

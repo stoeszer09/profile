@@ -11,6 +11,7 @@ import react from '../assets/react.png'
 import tailwind from '../assets/tailwind.png'
 import typescript from '../assets/typescript.png'
 import linkedin from '../assets/LinkedIn.png'
+import computer from '../assets/computer.avif'
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let message = 'THE STOESZER';
@@ -43,18 +44,32 @@ function Title() {
 
   return (
     <div className='m-6 p-6 bg-green-50 rounded-3xl shadow-lg '>
-      <h1 className='font-bold text-6xl p-10'
-      onMouseOver={() => setIteration(0)} onMouseOut={() => setIteration(0)}>
-        {printName}
+      <div className='flex'>
+        <div className='flex flex-col w-3/5'>
+          <h1 className='font-bold text-6xl p-10'
+          onMouseOver={() => setIteration(0)} onMouseOut={() => setIteration(0)}>
+          {printName}
         </h1>
-      <div>{/* Computer immage */}</div>
-      <div className='pl-10'>
-        <p>Hi, I'm Phillip Splettstoeszer, an expert Full Stack Developer.</p>
-        <div className='flex'>
-          <img className='w-10 h-10 m-5' src={github} alt='github image'/>
-          <img className='w-10 h-10 m-5' src={linkedin} alt='linkedin image'/>
+
+        <div className='pl-10'>
+          <p className='my-5 mx-5'>Hi, I'm Phillip Splettstoeszer, an expert Full Stack Developer.</p>
+          <div className='flex'>
+            <a href='https://github.com/stoeszer09'>
+              <img className='w-6 h-6 m-3' src={github} alt='github image'/>
+            </a>
+            <a href='https://www.linkedin.com/in/phillip-splettstoeszer/'>
+              <img className='w-6 h-6 m-3' src={linkedin} alt='linkedin image'/>
+            </a>
+          </div>
+        </div>
+        </div>
+
+
+        <div className='max-w-xs'>
+          <img className='scale-75 ml-10 rounded-xl' src={computer} alt='computer' />
         </div>
       </div>
+
       <div className='flex p-10'>
         <h3 className='font-bold pr-5'>My Skills:</h3>
         <img className='w-10 h-10' src={html} alt='html image'/>
